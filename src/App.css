@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Container that holds both panels */
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh; /* Make the panels stretch to the bottom */
 }
 
-.App-link {
-  color: #61dafb;
+/* Left panel (folder structure) */
+.left-panel {
+  width: 50%;
+  padding: 10px;
+  background-color: #f1f1f1;
+  overflow-y: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left-panel h3 {
+  margin-bottom: 10px;
+}
+
+.left-panel ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual folder items */
+.folder-item {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Hover effect */
+.folder-item:hover {
+  background-color: #dcdcdc;
+}
+
+/* Active (clicked) folder */
+.folder-item.active {
+  background-color: #cce5ff;
+  color: #0056b3;
+}
+
+/* Separator line between panels */
+.separator {
+  width: 2px;
+  background-color: black;
+}
+
+/* Right panel (subfolders and files) */
+.right-panel {
+  width: 50%;
+  padding: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.right-panel h3 {
+  margin-bottom: 10px;
+}
+
+.right-panel ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Subfolder and file items */
+.subfolder-item,
+.file-item {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
 }
